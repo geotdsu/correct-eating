@@ -1,0 +1,302 @@
+@font-face {
+    font-family: 'Georgian';
+    src: url('/fonts/bpg_glaho.ttf');
+}
+
+body, h1, h2, h3, h4, h5, h6, blockquote, p, pre, dl, dd, ol, ul, figure, hr, fieldset, legend {
+    margin: 0;
+    padding: 0;
+    font-family: Georgian;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+main {
+    margin: auto;
+    max-width: 900px
+}
+
+
+.brand-name {
+    display: flex;
+    font-size: 1.5rem;
+}
+
+.brand-name a {
+    display: flex;
+}
+
+.navbar {
+    position: fixed;
+    left: 0;      
+    right: 0;
+    top: 0;       
+    width: 100%;  
+    padding: 0;
+    margin: 0;
+    background-color: rgb(188, 255, 206)
+}
+
+.navbar-wrapper {
+    margin-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.khinkali-image {
+    width: 60px;
+    height: 60px;
+}
+
+
+.navbar-links ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+
+
+.calculator-link {
+    list-style: none;
+    margin-right: 1rem;
+}
+
+.contact-link {
+    list-style: none;
+    margin: 0rem 0rem;
+}
+
+.navbar-links li:hover {
+    font-weight: 700;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #241c15;
+}
+
+
+
+#introduction {
+    margin-top: 6.25rem;
+}
+
+#article {
+    margin-block-start: 3em;
+
+}
+
+
+.introduction-title {
+    display: block;
+    margin: 0px 30px;
+    
+
+}
+.message-block1 {
+    background-color: #FFE01B;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
+}
+.message-block2 {
+    background-color: #FFE01B;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+.message-block-inner {
+    padding: 1rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0rem 3rem;
+}
+
+
+.warning-message {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.warning-message-text {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.message-block-text {
+    line-height: 1.5em;
+    font-size: 1rem;
+    color: #241c15;
+    padding-block-start: 1rem;
+    padding-block-end: 2rem;
+    text-wrap: balance;
+    text-align: center;
+}
+
+.info-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.introduction-title-inner {
+    text-align: center;
+}
+
+.introduction-title-inner h1 {
+    line-height: 1.25em;
+    font-weight: 700;
+    margin: 0;
+    font-size: 2.5rem;
+    color: #241c15;
+    padding-block-start: 0.85em;
+    text-wrap: balance;
+
+}
+
+.introduction-title-inner p {
+    line-height: 1.5em;
+    font-size: 1.5rem;
+    color: #241c15;
+    padding-block-start: 1.5rem;
+    padding-block-end: 1.5rem;
+    text-wrap: balance;
+}
+
+
+
+.content {
+    display: block;
+    margin: 0px 35px;
+    font-size: 1rem;
+}
+
+
+.content-inner {
+    text-align: center;
+    display: inline-block;
+    text-align: left;
+    align-items: center;
+    margin: auto;
+    
+}
+
+
+.content-inner p {
+    font-size: 1rem;
+    line-height: 1.5em;
+    padding-block-start: 1rem;
+    padding-block-end: 1rem;
+}
+
+
+.content-inner h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-block-start: 30px;
+    margin-block-end: 10px;
+}
+.content-inner h2 {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.content-inner ul {
+    margin-block-start: 30px;
+    padding-block-end: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.content-inner li {
+    margin-block-start: 32px;
+}
+
+
+.footer-container {
+    background-color: rgb(255, 158, 158);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-header {
+    margin: 1.25rem 0rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #241c15;;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.linkedin-icon {
+    width: 30px;
+    height: 30px;
+    transition:transform .25s ease;
+    cursor: pointer;
+}
+
+.mail-icon {
+    width: 30px;
+    height: 30px;
+    transition:transform .25s ease;
+    cursor: pointer;
+}
+
+.linkedin-icon:hover {
+    transform: scale(1.25);
+}
+
+.mail-icon:hover {
+    transform: scale(1.25);
+}
+
+.icon-container1,
+.icon-container2 {
+    margin: 0rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkedin-icon-link,
+.mail-icon-link {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+@media (max-width: 31.25rem) {
+    .contact-link {
+        display: none;
+    }
+
+
+}
+
+
+@media (min-width: 31.25rem) {
+    .navbar-wrapper {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}
+
+
