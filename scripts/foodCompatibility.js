@@ -2285,8 +2285,6 @@ const compatibilityTable = {
 
 
 
-
-
 function getSelectValue1() {
     return document.getElementById("food1").value;
 }
