@@ -56,7 +56,8 @@ label {
 
 .good-button,
 .normal-button,
-.bad-button {
+.bad-button,
+.neutral-button {
     box-sizing: content-box;
     background-color: rgb(21, 232, 44); 
     color: white; 
@@ -75,6 +76,9 @@ label {
     background-color: rgb(232, 39, 44);
 }
 
+.neutral-button {
+    background-color: rgb(86, 86, 86);
+}
 .button-container {
     display: flex;
     flex-direction: column;
