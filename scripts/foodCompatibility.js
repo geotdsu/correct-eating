@@ -2316,8 +2316,241 @@ function checkCompatibility() {
         } else if (result === "ცუდი") {
             resultBtn.classList.add("bad-button");
         }
-    } 
+    }
+    
+    document.getElementById("food1").addEventListener("change", checkCompatibility);
+    document.getElementById("food2").addEventListener("change", checkCompatibility);
+        
 }
 
-document.getElementById("food1").addEventListener("change", checkCompatibility);
-document.getElementById("food2").addEventListener("change", checkCompatibility);
+
+
+// testing second calculator
+
+
+
+const foodsTranslated = {
+    sourcream: "არაჟანი",
+    peaches: "ატამი",
+    eggplant: "ბადრიჯანი",
+    peas: "ბარდა",
+    veggies: "ბოსტნეული(კარტოფილის გარდა)",
+    apricots: "გარგარი",
+    pumpkin: "გოგრა",
+    honey: "თაფლი",
+    fish: "თევზი",
+    nuts: "თხილეული",
+    candies: "კამფეტი",
+    butter: "კარაქი",
+    potatoes: "კარტოფილი",
+    kefir: "კეფირი",
+    eggs: "კვერცხი",
+    pickles: "კიტრი",
+    beans: "ლობიო",
+    grain: "მარცვლეული",
+    sourmilk: "მაწონი",
+    pickled: "მწნილი",
+    sourcabbage: "მჟავე კომბოსტო",
+    sourfruit: "მჟავე ხილი",
+    jam: "მურაბა",
+    vegoil: "მცენარეული ზეთი",
+    greenpeas: "მწვანე ბარდა",
+    greens: "მწვანილი",
+    halfsourfruit: "ნახევრად მჟავე ხილი",
+    melon: "ნესვი",
+    lentils: "ოსპი",
+    tomatoes: "პომიდორი",
+    bread: "პური",
+    milk: "რძე",
+    confectionery: "საკონდიტრო ნაწარმი",
+    soybean: "სოიო",
+    mushroom: "სოკო",
+    sweetfruit: "ტკბილი ხილი",
+    pigfat: "ღორის ქონი",
+    zucchini: "ყაბახი",
+    cheese: "ყველი",
+    grapes: "ყურძენი",
+    sugar: "შაქარი",
+    chocolate: "შოკოლადი",
+    cottagecheese: "ხაჭო",
+    meat: "ხორცი",
+
+}
+let foods = [];
+
+
+function renderSelectedFoods() {
+    let foodListHTML = '';
+
+    foods.forEach((food) => {
+        const product = food;
+        const html = `
+            <div class="products-container">
+            <div class="product-name">${foodsTranslated[product]}</div>
+            <button class="delete-button js-delete-button">წაშლა</button>
+            </div>
+        `;
+        foodListHTML += html
+    });
+
+    document.querySelector('.js-food-list')
+        .innerHTML = foodListHTML;
+
+    document.querySelectorAll('.js-delete-button')
+        .forEach((deleteButton, index) => {
+            deleteButton.addEventListener('click', () => {
+                foods.splice(index, 1);
+                renderSelectedFoods();
+            });
+        })
+}
+
+
+
+
+function checkMultipleFoodCompatibility() {
+    
+    let goodResult = 0;
+    let normalResult = 0;
+    let badResult = 0;
+
+    if (foods.length > 1) {
+        for (let i = 0; i < foods.length; i++) {
+            for (let j = i+1; j < foods.length; j++) { 
+                const food1 = foods[i];
+                const food2 = foods[j];
+                const result = compatibilityTable[food1][food2];
+                if (result === 'კარგი') {
+                    goodResult += 1;
+                } else if (result === 'დასაშვები') {
+                    normalResult += 1;
+                } else if (result === 'ცუდი') {
+                    badResult += 1;
+                }
+            }
+        }
+    } 
+    // else if (foods.length < 2) {
+    //     console.log('choose minimum 2 foods');
+    // } 
+
+    
+    // document.querySelector('.js-food-list')
+    // .innerHTML = ''
+    
+    if (goodResult > 0 && normalResult > 0 && badResult > 0) {
+        return 'bad';
+    } else if ((goodResult > 0 && normalResult > 0) && badResult === 0) {
+        return 'normal';// result - normal
+    } else if ((goodResult > 0 && badResult > 0) && normalResult === 0) {
+        return 'bad';// result - bad
+    } else if ((normalResult === 0 && badResult === 0) && goodResult > 0) {
+        return 'good';//  result - good
+    } else if ((goodResult === 0 && normalResult === 0) && badResult > 0) {
+        return 'bad';//  result - bad
+    } else if ((goodResult === 0 && badResult === 0) && normalResult > 0) {
+        return 'normal';// result - normal
+    } else if ((normalResult > 1 && badResult > 1) && goodResult === 0) {
+        return 'bad';// result - bad
+    } else {
+        return 'unknown';
+    }
+
+}
+
+
+
+function renderCompatibilityResult() {
+    document.querySelector('.js-food-list')
+        .innerHTML = '';
+
+    const result = checkMultipleFoodCompatibility();
+    const foodListResult = document.querySelector('.js-food-list-result');
+
+
+    // change those too to specific protein greens etc etc
+    if (result === 'good') {
+        foodListResult.innerHTML = `
+        <label class="calc2-result-label" for="calc2-result">თავსებადობა:</label>
+        <button id="calc2-result" class="good-button-2">კარგი</button>`
+    } else if (result === 'normal') {
+        foodListResult.innerHTML = `
+        <label class="calc2-result-label" for="calc2-result">თავსებადობა:</label>
+        <button id="calc2-result" class="normal-button-2">დასაშვები</button>`
+    } else if (result === 'bad') {
+        foodListResult.innerHTML = `
+        <label class="calc2-result-label" for="calc2-result">თავსებადობა:</label>
+        <button id="calc2-result" class="bad-button-2">ცუდი</button>`
+    } else {
+        foodListResult.innerHTML = `
+        <div class="warning-message-2foods">გთხოვთ აირჩიოთ მინიმუმ 2 საჭმელი</div>`
+    }
+
+    foods = [];
+
+    let selectElement = document.querySelector('#food3');
+    selectElement.addEventListener('change', () => {
+        document.querySelector('.js-food-list-result').innerHTML = ''; 
+    })
+
+
+}
+
+function getSelectValue() {
+    let selectElement = document.querySelector('#food3');
+    selectElement.addEventListener('change', function () {
+
+        const selectedValue = this.value;
+
+        if (!foods.includes(selectedValue) && foods.length != 8) {
+            foods.push(selectedValue);
+        }
+        renderSelectedFoods();
+    });
+}
+
+
+function setupButtonClick() {
+    const button = document.querySelector('.food-add-button');
+    button.addEventListener('click', () => {
+        renderCompatibilityResult();
+    });
+}
+
+function setupClearButton() {
+    const clearButton = document.querySelector('.js-reset-button');
+    const selectElement = document.querySelector('.food-select');
+
+    clearButton.addEventListener('click', () => {
+        foods = [];
+        document.querySelector('.js-food-list').innerHTML = '';
+        document.querySelector('.js-food-list-result').innerHTML = '';
+        selectElement.value = 'dummy-food';
+
+    })
+
+
+
+}
+
+
+checkCompatibility();
+
+getSelectValue();
+setupButtonClick();
+setupClearButton();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -204,8 +204,8 @@
                             <h1 id="jump-link-calculator" class="calculator-title">პროდუქტების თავსებადობის კალკულატორი</h1>
                         </div>
 
-                        <div class="select-container">
-                            <div class="select-wrapper">
+                        <div class="select-container1">
+                            <div class="select-wrapper1">
                                 <label for="food1">პროდუქტი&nbsp;#1:</label>
                                                     
                                 <select name="food1" id="food1">
@@ -275,7 +275,7 @@
                                 </select>
                             </div>
                         
-                            <div class="select-wrapper">
+                            <div class="select-wrapper1">
                                 <label for="food2">პროდუქტი&nbsp;#2:</label>
                             
                                 <select name="food2" id="food2">
@@ -343,9 +343,9 @@
                                 </select>
                                 
                             </div>
-
-
-
+                            
+                            
+                            
                             <div class="button-container">
                                 <label for="resultBtn" class="calculator-button-label">
                                     თავსებადობა:
@@ -356,6 +356,95 @@
                             </div>
                             
                         </div>
+
+
+
+                        <div class="select-container2">
+                            <!-- select 3 -->
+                            <div class="calc2-label-container">
+                                <label for="food3">პროდუქტი:</label>
+                            </div>
+                            <select name="food3" id="food3">
+
+                                <!-- proteins category -->
+                                <optgroup label="ცილები">
+                                    <option value="meat">ხორცი</option>
+                                    <option value="fish">თევზი</option>
+                                    <option value="eggs">კვერცხი</option>
+                                    <option value="nuts">თხილეული</option>
+                                    <option value="mushroom">სოკო</option>
+                                    <option value="peas">ბარდა</option>
+                                    <option value="beans">ლობიო</option>
+                                    <option value="soybean">სოიო</option>
+                                    <option value="lentils">ოსპი</option>
+                                    <option value="cheese">ყველი</option>
+                                    <option value="cottagecheese">ხაჭო</option>
+                                    <option value="sourcream">არაჟანი</option>
+                                    <option value="kefir">კეფირი</option>
+                                    <option value="sourmilk">მაწონი</option>
+                                    <option value="milk">რძე</option>
+                                </optgroup>
+
+                                <!-- fats -->
+                                <optgroup label="ცხიმები">
+                                    <option value="pigfat">ღორის ქონი</option>
+                                    <option value="butter">კარაქი</option>
+                                    <option value="vegoil">მცენარეული ზეთი</option>
+                                </optgroup>
+                                
+                                <!-- alive products / greens -->
+                                <optgroup label="ცოცხალი პროდუქტი">
+                                    <option value="greens">მწვანილი</option>
+                                    <option value="veggies">ბოსტნეული(კარტოფილის გარდა)</option>
+                                    <option value="sourfruit">მჟავე ხილი</option>
+                                    <option value="halfsourfruit">ნახევრად მჟავე ხილი</option>
+                                    <option value="greenpeas">მწვანე ბარდა</option>
+                                    <option value="tomatoes">პომიდორი</option>
+                                    <option value="sourcabbage">მჟავე კომბოსტო</option>
+                                    <option value="pickles">კიტრი</option>
+                                    <option value="pickled">მწნილი</option>
+                                </optgroup>
+
+
+                                <!-- carbohydrates -->
+                                <optgroup label="ნახშირწყლები">
+                                    <option value="bread">პური</option>
+                                    <option value="grain">მარცვლეული</option>
+                                    <option value="confectionery">საკონდიტრო ნაწარმი</option>
+                                    <option value="potatoes">კარტოფილი</option>
+                                    <option value="pumpkin">გოგრა</option>
+                                    <option value="zucchini">ყაბახი</option>
+                                    <option value="eggplant">ბადრიჯანი</option>
+                                    <option value="sugar">შაქარი</option>
+                                    <option value="jam">მურაბა</option>
+                                    <option value="chocolate">შოკოლადი</option>
+                                    <option value="candies">კამფეტი</option>
+                                    <option value="honey">თაფლი</option>
+                                    <option value="grapes">ყურძენი</option>
+                                    <option value="apricots">გარგარი</option>
+                                    <option value="peaches">ატამი</option>
+                                    <option value="sweetfruit">ტკბილი ხილი</option>
+                                    <option value="melon">ნესვი</option>
+                                </optgroup>
+                            
+                            </select>
+                            
+                            <div class="calculator3-buttons-container">
+                                <button class="food-add-button">გამოთვლა</button>
+                            
+                                <button class="js-reset-button reset-button">გასუფთავება</button>
+                            </div>
+                        
+
+                            <div class="js-food-list food-list"></div>
+                        
+                            <!-- <div class="food-list-result-container"> -->
+                            <div id="calc2-result" class="js-food-list-result food-list-result"></div>
+                            <!-- </div> -->
+                        </div>
+                        <!-- Calculator 2 end -->
+
+
                         <img class="compatibility-image" src="images/სწორი კვება.png">
                         <div class="download-button-container">
                             <a href="images/სწორი კვება.png" download="სწორი კვება.png">
@@ -396,6 +485,5 @@
     </footer>
 
     <script src="scripts/foodCompatibility.js"></script>
-    <script src="scripts/navbar.js"></script>
 </body>
 </html>

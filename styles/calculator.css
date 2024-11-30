@@ -2,7 +2,7 @@
     margin-block-start: 3rem;
 }
 
-.select-container {
+.select-container1 {
     display: flex;
     border-radius: 1.25rem;
     flex-direction: column;
@@ -32,6 +32,164 @@ label {
     margin-bottom: 30px;
 }
 
+/* calculator 2 */
+.select-container2 {
+    display: flex;
+    border-radius: 1.25rem;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 25px;
+    margin-bottom: 70px;
+    /* flex-wrap: wrap; */
+    align-items: center;
+}
+
+
+#food3 {
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 1em;
+    padding: 12px 5px;
+    border: 1px solid #DDEAF1;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+
+
+.food-add-button:hover {
+    background-color: rgb(255, 247, 129);
+}
+
+
+.food-add-button,
+.reset-button {
+    background-color: rgb(255, 243, 74);
+    color: #241c15;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    width: 100%;
+    padding: .6em;
+}
+
+
+.reset-button {
+    background-color: rgb(255, 171, 67);
+}
+
+.reset-button:hover {
+    background-color: rgb(254, 196, 124);
+}
+
+.calculator3-buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100px;
+
+}
+
+
+.food-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.food-list-result {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.product-name {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+
+
+.delete-button {
+    background-color: darkred;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.products-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.good-button-2,
+.normal-button-2,
+.bad-button-2 {
+    box-sizing: content-box;
+    background-color: rgb(21, 232, 44); 
+    color: white; 
+    font-weight: bold;
+    padding-top: .8em;
+    padding-bottom: .8em;
+    border: none;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+.normal-button-2 {
+    background-color: rgb(232, 179, 44);
+}
+
+.bad-button-2 {
+    background-color: rgb(232, 39, 44);
+}
+
+
+.food-list-result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calc2-result-label {
+    font-size: 1rem;
+}
+
+
+.warning-message-2foods {
+    color: rgb(255, 0, 0);
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.calc2-label-container {
+    display: flex;
+    align-items: start;
+    width: 100%;
+}
+
+
 
 .content-inner-calculator {
     display: flex;
@@ -41,7 +199,6 @@ label {
 
 .calculator-title-container {
     display: flex;
-    align-items: center;
     align-items: center;
 }
 
@@ -76,9 +233,7 @@ label {
     background-color: rgb(232, 39, 44);
 }
 
-.neutral-button {
-    background-color: rgb(86, 86, 86);
-}
+
 .button-container {
     display: flex;
     flex-direction: column;
@@ -118,6 +273,7 @@ label {
     padding: 12px 0px;
     cursor: pointer;
     transition: all 200ms;
+    transition-property: background-color;
 
 }
 
@@ -126,15 +282,20 @@ label {
     background-color: #ffeec0;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, #FFE01B 0px 0px 0px 2px;
 }
+.download-button:hover {
+    font-weight: 600;
+}
 
 
-.select-wrapper {
+.select-wrapper1 {
     display: flex;
     flex-direction: column;
 }
 
-@media (min-width: 56.25rem) {
-    .select-container {
+
+
+@media (min-width: 43.75rem) {
+    .select-container1 {
         flex-direction: row;
         align-items: center;
         justify-content: center;
